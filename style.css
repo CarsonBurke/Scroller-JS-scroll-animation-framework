@@ -5,3 +5,23 @@ body {
     transition: all 0.2s;
     font-family: sans-serif;
 }
+
+.landingContainer {
+    background: rgb(39, 39, 39);
+    transition: all 0.3s;
+    height: 200px;
+    width: 200px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 12px 50px 0;
+}
+
+.animate {
+    opacity: 0;
+    user-select: none;
+    position: relative;
+    top: 60px;
+}
