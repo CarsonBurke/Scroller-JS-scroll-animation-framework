@@ -106,7 +106,7 @@ body {
     animation: faderight 1.5s;
     position: relative;
     border-radius: 4px;
-    box-shadow: rgba(0, 0, 0, 0.22) 0 12px 30px 0;
+    box-shadow: rgba(0, 0, 0, 0.09) 0 10px 40px 0;
 }
 
 .landingchildcontainerparent {
@@ -383,7 +383,6 @@ body {
 .footerHeader {
     margin: 0;
     font-size: 27px;
-    text-transform: uppercase;
 }
 
 .footerCopyright {
