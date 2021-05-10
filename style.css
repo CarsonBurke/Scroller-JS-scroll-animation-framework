@@ -1,10 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 body {
     background: rgb(240, 240, 240);
     padding: 0;
     margin: 0;
     transition: all 0.2s;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot);
+    /* For IE6-8 */
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+* {
+    scroll-behavior: smooth;
+    --primary: #c210e6;
+    --secondary: rgb(32, 64, 151);
+    --tertiary: rgb(240, 240, 240);
+    --tertiaryshade: rgb(255, 255, 255);
+    --nav: rgb(36, 36, 36);
 }
 
 .container {
@@ -25,4 +44,196 @@ body {
     color: rgb(0, 0, 0);
     font-size: 45px;
     box-shadow: rgba(0, 0, 0, 0.08) 0 18px 50px 0;
+}
+
+
+/*Content*/
+
+.landingparent {
+    padding: 0 7.5%;
+    padding-top: 55px;
+    display: flex;
+    flex-direction: row;
+    min-height: calc(100vh - 55px);
+    background-color: var(--tertiary);
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
+
+@media all and (max-width: 800px) {
+    .landingparent {
+        flex-direction: column;
+        padding-top: 85px;
+        min-height: calc(100vh - 85px);
+    }
+}
+
+.landingchild {
+    width: 100%;
+    margin-bottom: 50px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+@media all and (max-width: 800px) {
+    .landingchild {
+        text-align: center;
+    }
+}
+
+.landingchildleft {
+    animation: fadeleft 0.9s, contentload 0.5s;
+}
+
+.landingheader {
+    font-size: 48px;
+    color: rgb(0, 0, 0);
+    margin: auto;
+    text-shadow: rgba(0, 0, 0, 0.1) 2px 4px 3px;
+}
+
+.landingcontent {
+    color: black;
+    margin: 10px auto;
+    font-size: 19px;
+    line-height: 25px;
+    font-weight: 100;
+}
+
+.landingimage {
+    width: 75%;
+    margin: 0 12.5%;
+    animation: faderight 1.5s;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.22) 0 12px 30px 0;
+}
+
+.landingchildcontainerparent {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.landingchildcontainerchild {
+    width: fit-content;
+    margin: 10px;
+    position: relative;
+    animation: fadeup 2.2s;
+}
+
+.button {
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: max-content;
+    color: white;
+    border-radius: 4px;
+    background: var(--primary);
+    padding: 12px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 8px 10px 0, rgba(0, 0, 0, 0) inset 0 0 1000px;
+    display: block;
+    text-decoration: none;
+}
+
+.button:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 16px 0, rgba(0, 0, 0, 0.25) inset 0 0 1000px;
+}
+
+.buttonalt {
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: max-content;
+    color: white;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: all 0.3s;
+    background: var(--tertiary);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 8px 10px 0;
+    display: block;
+    text-decoration: none;
+}
+
+.buttonalt:hover {
+    background: var(--nav);
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 16px 0;
+}
+
+.container1 {
+    background: var(--tertiaryshade);
+    color: white;
+}
+
+.container2 {
+    background: var(--tertiary);
+    color: white;
+}
+
+.flexparent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+@media all and (max-width: 800px) {
+    .flexparent {
+        flex-direction: column;
+    }
+}
+
+.cardparent {
+    margin: 2.5%;
+    animation: fadeup 0.75s, contentload 0.75s;
+    transition: all 0.3s;
+    will-change: transform;
+    position: relative;
+    top: 0;
+    cursor: default;
+}
+
+.cardparent:first-child {
+    animation: faderight 0.75s, contentload 0.75s;
+}
+
+.cardparent:last-child {
+    animation: fadeleft 0.75s, contentload 0.75s;
+}
+
+.cardparent:hover img {
+    top: -5px;
+    filter: brightness(80%);
+    cursor: default;
+}
+
+.cardtitle {
+    text-align: center;
+    font-size: 22px;
+}
+
+.cardimage {
+    width: 70%;
+    margin: 0 15%;
+    border-radius: 4px;
+    transition: all 0.3s;
+    position: relative;
+    top: 0;
+    transition: all 0.3s;
+}
+
+.cardcontent {
+    opacity: 0.8;
+    font-variation-settings: 17px;
+    width: 60%;
+    margin: auto;
+    line-height: 30px;
 }

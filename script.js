@@ -8,7 +8,7 @@ function addStyles() {
     let styles = `
     .animate {
         opacity: 0;
-        user-select: none;
+        pointer-events: none;
         transition: all 0.3s ease-in-out;
         position: relative;
     }
@@ -25,8 +25,9 @@ function addStyles() {
         left: -80px;
     }
     .animateShow {
+        display: initial;
         opacity: 1;
-        user-select: all;
+        pointer-events: all;
         top: 0;
         left: 0;
     }
@@ -58,6 +59,13 @@ function animateItem() {
         }
 
         item.style.transition = "all " + item.dataset.time + "ease-in-out"
+
+        if (!item.dataset.delay) {
+
+            item.dataset.time = "0s"
+        }
+
+        item.style.transitionDelay = item.dataset.delay
 
         let userPosTop = browserHeight - item.dataset.showValue
         let itemPosTop = getPosition(item)
