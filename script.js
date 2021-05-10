@@ -109,17 +109,19 @@ function animateItem() {
 
         if (!item.dataset.time) {
 
-            item.dataset.time = "1s"
+            item.dataset.time = "1"
         }
 
-        item.style.animationDuration = item.dataset.time
+        item.style.animationDuration = item.dataset.time + "s"
 
         let userPosTop = browserHeight - item.dataset.showValue
-        let itemPosTop = Math.floor(getPosition(item) / 100) * 100
+
+        let itemPosTop = Math.trunc(getPosition(item) / 10) * 10
 
         function getPosition(item) {
 
             let clientRect = item.getBoundingClientRect()
+
             let top = clientRect.top + document.body.scrollTop
 
             return top
@@ -149,11 +151,11 @@ function animateItem() {
 
                     item.style.animationName = "still"
                 }
-            } else {
+            } else if (browserHeight <= itemPosTop) {
 
                 item.classList.remove("animateShow")
 
-                item.style.animationName = "undefined"
+                item.style.animationName = "null"
             }
         }
     }
