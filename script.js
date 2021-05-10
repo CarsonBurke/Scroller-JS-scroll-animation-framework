@@ -168,17 +168,24 @@ window.onload = function() {
     console.log(displayBlock)
 }
 
+let startBlockRan = false
+
 function startBlock() {
 
-    displayBlock.style.borderRadius = "0"
-    displayBlock.style.width = "100px"
-    displayBlock.style.height = "100px"
-    displayBlock.innerHTML = "Still"
-    displayBlock.classList.add("animate")
-    animateItem()
+    if (startBlockRan == false) {
 
-    addDisplay.style.cursor = "default"
-    displayBlock.style.cursor = "default"
+        displayBlock.style.borderRadius = "0"
+        displayBlock.style.width = "100px"
+        displayBlock.style.height = "100px"
+        displayBlock.innerHTML = "Still"
+        displayBlock.classList.add("animate")
+        animateItem()
+
+        addDisplay.style.cursor = "default"
+        displayBlock.style.cursor = "default"
+
+        startBlockRan = true
+    }
 }
 
 function upChoice() {

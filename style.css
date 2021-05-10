@@ -260,6 +260,10 @@ body {
     width: 100%;
 }
 
+.addCode {
+    background: var(--tertiaryshade);
+}
+
 .addChild {
     margin: 15px;
     width: 100%;
