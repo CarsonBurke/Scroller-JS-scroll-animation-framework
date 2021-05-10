@@ -104,7 +104,7 @@ function animateItem() {
 
         if (!item.dataset.showValue) {
 
-            item.dataset.showValue = "0"
+            item.dataset.showValue = "100"
         }
 
         if (!item.dataset.time) {
@@ -181,6 +181,7 @@ function startBlock() {
         displayBlock.style.height = "100px"
         displayBlock.innerHTML = "Still"
         displayBlock.classList.add("animate")
+        displayBlock.style.animation = "sill 1.5s infinite"
         animateItem()
 
         addDisplay.style.cursor = "default"
