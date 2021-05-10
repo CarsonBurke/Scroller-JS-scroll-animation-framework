@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -37,34 +38,58 @@
         </div>
         <div class="container1" id="learnMore">
 
-            <h2 class="header">Customizable, Simple.</h2>
+            <h2 class="header animate floatUp" data-show-value="300">Customizable, Simple.</h2>
 
             <div class="flexparent">
-                <div class="cardparent animate floatUp" tabindex="0" data-showValue="800">
+                <a class="cardparent animate floatUp" onclick="upChoice()" tabindex="0" data-show-value="200">
 
                     <h1 class="cardtitle">Up</h1>
 
-                </div>
-                <div class="cardparent animate floatDown" tabindex="0" data-showValue="800">
+                </a>
+                <a class="cardparent animate floatDown" onclick="downChoice()" tabindex="0" data-show-value="200">
 
                     <h1 class="cardtitle">Down</h1>
 
-                </div>
-                <div class="cardparent animate floatLeft" tabindex="0" data-showValue="800">
+                </a>
+                <a class="cardparent animate floatLeft" onclick="leftChoice()" tabindex="0" data-show-value="200">
 
                     <h1 class="cardtitle">Left</h1>
 
-                </div>
-                <div class="cardparent animate floatRight" tabindex="0" data-showValue="800">
+                </a>
+                <a class="cardparent animate floatRight" onclick="rightChoice()" tabindex="0" data-show-value="200">
 
                     <h1 class="cardtitle">Right</h1>
 
-                </div>
-                <div class="cardparent animate" tabindex="0" data-showValue="800">
+                </a>
+                <a class="cardparent animate" tabindex="0" onclick="stillChoice()" data-show-value="200">
 
                     <h1 class="cardtitle">Still</h1>
 
+                </a>
+            </div>
+            <div class="addContainer">
+
+                <h3 class="secondaryHeader addHeader">Add Scroller to your project</h3>
+
+                <div class="addParent">
+                    <div class="addChild">
+
+                        asdfsdfsdf
+
+                    </div>
+                    <div class="addChild">
+
+                        <div class="addDisplay" id="addDisplay" onclick="startBlock()">
+
+                            <h1 class="displayBlock" id="displayBlock" data-time="1.5s"><span class="material-icons-outlined">
+                                play_circle
+                                </span></h1>
+
+                        </div>
+
+                    </div>
                 </div>
+
             </div>
         </div>
         <div class="container2">

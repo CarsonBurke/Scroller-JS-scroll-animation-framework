@@ -12,14 +12,16 @@ body {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url(https://example.com/MaterialIcons-Regular.eot);
-    /* For IE6-8 */
     src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons-outlined {
+    font-size: 50px;
 }
 
 * {
     scroll-behavior: smooth;
-    --primary: #c210e6;
+    --primary: #d120f5;
     --secondary: rgb(32, 64, 151);
     --tertiary: rgb(255, 255, 255);
     --tertiaryshade: rgb(240, 240, 240);
@@ -130,7 +132,7 @@ body {
 }
 
 .button:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 16px 0, rgba(0, 0, 0, 0.25) inset 0 0 1000px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 16px 0, rgba(0, 0, 0, 0.15) inset 0 0 1000px;
 }
 
 .buttonalt {
@@ -182,21 +184,24 @@ body {
     top: 0;
     cursor: default;
     background: white;
-    box-shadow: rgba(0, 0, 0, 0.08) 0 6px 40px 0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 3px 10px 0;
     width: 100px;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
 }
 
 .cardparent:hover {
-    box-shadow: rgba(0, 0, 0, 0.14) 0 20px 60px 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 10px 15px 0, rgba(0, 0, 0, 0) 0 3px 10px 0, inset rgba(0, 0, 0, 0.1) 0 0 0 10000px;
 }
 
 .cardparent:focus {
-    box-shadow: rgba(0, 0, 0, 0.1) 0 6px 12px 0, inset var(--primary) 0 0 0 1px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 15px 15px 0, rgba(0, 0, 0, 0.2) 0 3px 10px 0, inset rgba(0, 0, 0, 0.25) 0 0 0 10000px;
 }
 
 .cardparent:hover img {
@@ -208,7 +213,6 @@ body {
 .cardtitle {
     text-align: center;
     font-size: 22px;
-    color: black;
 }
 
 .cardimage {
@@ -227,4 +231,74 @@ body {
     margin: 0;
     margin-top: 40px;
     font-size: 36px;
+    text-shadow: rgba(0, 0, 0, 0.1) 2px 4px 3px;
+}
+
+.secondaryHeader {
+    text-align: center;
+    color: black;
+    margin: 0;
+    font-size: 30px;
+    text-shadow: rgba(0, 0, 0, 0.1) 2px 4px 3px;
+}
+
+.addContainer {
+    background: white;
+    padding: 20px;
+    margin: 30px auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.07) 0 6px 30px 0;
+}
+
+.addHeader {}
+
+.addParent {
+    padding: 10px 0;
+    display: flex;
+    width: 100%;
+}
+
+.addChild {
+    margin: 15px;
+    width: 100%;
+}
+
+.addDisplay {
+    background: var(--tertiaryshade);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.addDisplay:hover .displayBlock {
+    box-shadow: inset rgba(0, 0, 0, 0.15) 0 0 0 10000px, rgba(0, 0, 0, 0.3) 0 3px 10px 0;
+}
+
+.displayBlock {
+    margin: 40px 0;
+    padding: 10px;
+    transition: all 0.3s;
+    position: relative;
+    top: 0;
+    cursor: default;
+    background: white;
+    box-shadow: inset rgba(0, 0, 0, 0) 0 0 0 10000px, rgba(0, 0, 0, 0.3) 0 3px 10px 0;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: all 0.3s;
 }
