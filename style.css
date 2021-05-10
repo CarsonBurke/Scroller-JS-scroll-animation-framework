@@ -238,7 +238,6 @@ body {
     margin: 0;
     padding-top: 60px;
     font-size: 36px;
-    text-shadow: rgba(0, 0, 0, 0.1) 2px 4px 3px;
 }
 
 .secondaryHeader {
@@ -246,7 +245,6 @@ body {
     color: black;
     margin: 0;
     font-size: 30px;
-    text-shadow: rgba(0, 0, 0, 0.1) 2px 4px 3px;
 }
 
 .addContainer {
@@ -274,6 +272,7 @@ body {
     background: var(--tertiaryshade);
     padding: 8px;
     margin: 10px 0;
+    margin-top: 20px;
     color: black;
     border-left: 2px solid var(--primary);
 }
