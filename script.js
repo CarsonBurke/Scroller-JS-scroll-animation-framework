@@ -6,30 +6,91 @@ addStyles()
 
 function addStyles() {
     let styles = `
+    @keyframes floatUp {
+        0% {
+            opacity: 0;
+            top: 60px;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            top: 0;
+        }
+    }
+    @keyframes floatDown {
+        0% {
+            opacity: 0;
+            top: -60px;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            top: 0;
+        }
+    }
+    @keyframes floatLeft {
+        0% {
+            opacity: 0;
+            left: 60px;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            left: 0;
+        }
+    }
+    @keyframes floatRight {
+        0% {
+            opacity: 0;
+            left: -60px;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            left: 0;
+        }
+    }
+    @keyframes still {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     .animate {
         opacity: 0;
         pointer-events: none;
-        transition: all 0.3s ease-in-out;
         position: relative;
     }
-    .floatUp {
-        top: 80px;
-    }
-    .floatDown {
-        top: -80px;
-    }
-    .floatLeft {
-        left: 80px;
-    }
-    .floatRight {
-        left: -80px;
-    }
     .animateShow {
-        display: initial;
         opacity: 1;
         pointer-events: all;
         top: 0;
         left: 0;
+        animation-name: still;
+    }
+    .floatUp {}
+    .floatDown {
+        animation-name: floatDown;
+    }
+    .floatLeft {
+        animation-name: floatLeft;
+    }
+    .floatRight {
+        animation-name: floatRight;
     }
     `
 
@@ -55,17 +116,10 @@ function animateItem() {
 
         if (!item.dataset.time) {
 
-            item.dataset.time = "0.4s"
+            item.dataset.time = "1s"
         }
 
-        item.style.transition = "all " + item.dataset.time + "ease-in-out"
-
-        if (!item.dataset.delay) {
-
-            item.dataset.time = "0s"
-        }
-
-        item.style.transitionDelay = item.dataset.delay
+        item.style.animationDuration = item.dataset.time
 
         let userPosTop = browserHeight - item.dataset.showValue
         let itemPosTop = getPosition(item)
@@ -85,9 +139,28 @@ function animateItem() {
             if (userPosTop >= itemPosTop) {
 
                 item.classList.add("animateShow")
+
+                if (item.classList.contains("floatUp")) {
+
+                    item.style.animationName = "floatUp"
+                } else if (item.classList.contains("floatDown")) {
+
+                    item.style.animationName = "floatDown"
+                } else if (item.classList.contains("floatLeft")) {
+
+                    item.style.animationName = "floatLeft"
+                } else if (item.classList.contains("floatRight")) {
+
+                    item.style.animationName = "floatRight"
+                } else {
+
+                    item.style.animationName = "still"
+                }
             } else {
 
                 item.classList.remove("animateShow")
+
+                item.style.animationName = "none"
             }
         }
     }

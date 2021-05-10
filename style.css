@@ -21,8 +21,8 @@ body {
     scroll-behavior: smooth;
     --primary: #c210e6;
     --secondary: rgb(32, 64, 151);
-    --tertiary: rgb(240, 240, 240);
-    --tertiaryshade: rgb(255, 255, 255);
+    --tertiary: rgb(255, 255, 255);
+    --tertiaryshade: rgb(240, 240, 240);
     --nav: rgb(36, 36, 36);
 }
 
@@ -30,20 +30,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.landingContainer {
-    background: rgb(255, 255, 255);
-    transition: all 0.3s;
-    height: 200px;
-    width: 200px;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    font-size: 45px;
-    box-shadow: rgba(0, 0, 0, 0.08) 0 18px 50px 0;
 }
 
 
@@ -183,30 +169,34 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-end;
-}
-
-@media all and (max-width: 800px) {
-    .flexparent {
-        flex-direction: column;
-    }
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
 }
 
 .cardparent {
-    margin: 2.5%;
-    animation: fadeup 0.75s, contentload 0.75s;
+    margin: 40px 0;
+    padding: 10px;
     transition: all 0.3s;
-    will-change: transform;
     position: relative;
     top: 0;
     cursor: default;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 6px 40px 0;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-.cardparent:first-child {
-    animation: faderight 0.75s, contentload 0.75s;
+.cardparent:hover {
+    box-shadow: rgba(0, 0, 0, 0.14) 0 20px 60px 0;
 }
 
-.cardparent:last-child {
-    animation: fadeleft 0.75s, contentload 0.75s;
+.cardparent:focus {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 6px 12px 0, inset var(--primary) 0 0 0 1px;
 }
 
 .cardparent:hover img {
@@ -218,6 +208,7 @@ body {
 .cardtitle {
     text-align: center;
     font-size: 22px;
+    color: black;
 }
 
 .cardimage {
@@ -230,10 +221,10 @@ body {
     transition: all 0.3s;
 }
 
-.cardcontent {
-    opacity: 0.8;
-    font-variation-settings: 17px;
-    width: 60%;
-    margin: auto;
-    line-height: 30px;
+.header {
+    text-align: center;
+    color: black;
+    margin: 0;
+    margin-top: 40px;
+    font-size: 36px;
 }
