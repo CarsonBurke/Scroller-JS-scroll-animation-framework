@@ -354,6 +354,7 @@ body {
     font-family: "poppins", sans-serif;
     background: var(--footerTertiary);
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .footerLeft {

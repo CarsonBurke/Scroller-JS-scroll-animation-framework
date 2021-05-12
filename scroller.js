@@ -11,9 +11,9 @@ function addStyles() {
     @keyframes floatUp {
         0% {
             opacity: 0;
-            top: 60px;
+            top: 200px;
         }
-        50% {
+        30% {
             opacity: 0;
         }
         100% {
@@ -24,9 +24,9 @@ function addStyles() {
     @keyframes floatDown {
         0% {
             opacity: 0;
-            top: -60px;
+            top: -200px;
         }
-        50% {
+        30% {
             opacity: 0;
         }
         100% {
@@ -37,9 +37,9 @@ function addStyles() {
     @keyframes floatLeft {
         0% {
             opacity: 0;
-            left: 60px;
+            left: 200px;
         }
-        50% {
+        30% {
             opacity: 0;
         }
         100% {
@@ -50,9 +50,9 @@ function addStyles() {
     @keyframes floatRight {
         0% {
             opacity: 0;
-            left: -60px;
+            left: -200px;
         }
-        50% {
+        30% {
             opacity: 0;
         }
         100% {
@@ -64,7 +64,7 @@ function addStyles() {
         0% {
             opacity: 0;
         }
-        50% {
+        30% {
             opacity: 0;
         }
         100% {
@@ -111,7 +111,7 @@ function animateItem() {
 
         if (!item.dataset.time) {
 
-            item.dataset.time = "1"
+            item.dataset.time = "0.5"
         }
 
         item.style.animationDuration = item.dataset.time + "s"
