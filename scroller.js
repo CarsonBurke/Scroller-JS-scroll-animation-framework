@@ -122,9 +122,7 @@ function animateItem() {
 
         function getPosition(item) {
 
-            let clientRect = item.getBoundingClientRect()
-
-            let top = clientRect.top
+            let top = item.getBoundingClientRect().top
 
             return top
         }
