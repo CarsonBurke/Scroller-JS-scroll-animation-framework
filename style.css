@@ -345,7 +345,7 @@ body {
 /*FOOTER*/
 
 .footer {
-    --footerPrimary: rgb(53, 141, 255);
+    --footerPrimary: #2B92F1;
     --footerTertiary: rgb(40, 40, 53);
     display: flex;
     flex-wrap: wrap;
