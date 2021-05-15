@@ -124,7 +124,7 @@ function animateItem() {
 
             let clientRect = item.getBoundingClientRect()
 
-            let top = clientRect.top + document.body.scrollTop
+            let top = clientRect.top
 
             return top
         }
