@@ -1,9 +1,9 @@
-//Constants
+//CONSTANTS
 let animateItems = document.getElementsByClassName("animate")
 let browserHeight = window.innerHeight
 
 
-//Add in styles
+//ADD STYLES
 addStyles()
 
 function addStyles() {
@@ -99,7 +99,7 @@ window.addEventListener("load", animateItem)
 
 window.addEventListener("scroll", animateItem)
 
-//Perform animations
+//ANIMATIONS
 function animateItem() {
 
     for (let item of animateItems) {
