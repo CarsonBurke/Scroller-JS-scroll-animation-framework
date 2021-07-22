@@ -11,53 +11,50 @@ function addStyles() {
     @keyframes floatUp {
         0% {
             opacity: 0;
-            transform: translateY(200px);
+            transform: translate3d(0, 200px, 0);
         }
         30% {
             opacity: 0;
         }
         100% {
             opacity: 1;
-            transform: translateY(0);
+            
         }
     }
     @keyframes floatDown {
         0% {
             opacity: 0;
-            transform: translateY(-200px);
+            transform: translate3d(0, -200px, 0);
         }
         30% {
             opacity: 0;
         }
         100% {
             opacity: 1;
-            transform: translateY(0);
         }
     }
     @keyframes floatLeft {
         0% {
             opacity: 0;
-            transform: translateX(200px);
+            transform: translate3d(200px, 0, 0);
         }
         30% {
             opacity: 0;
         }
         100% {
             opacity: 1;
-            transform: translateX(0);
         }
     }
     @keyframes floatRight {
         0% {
             opacity: 0;
-            transform: translateX(-200px);
+            transform: translate3d(-200px, 0, 0);
         }
         30% {
             opacity: 0;
         }
         100% {
             opacity: 1;
-            transform: translateX(0);
         }
     }
     @keyframes still {
