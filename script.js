@@ -2,8 +2,6 @@ window.onload = function() {
 
     let displayBlock = document.getElementById("displayBlock")
     let addDisplay = document.getElementById("addDisplay")
-
-    console.log(displayBlock)
 }
 
 let startBlockRan = false

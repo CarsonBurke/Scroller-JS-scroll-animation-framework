@@ -1,13 +1,13 @@
-//CONSTANTS
-let animateItems = document.getElementsByClassName("animate")
-let browserHeight = window.innerHeight
+// Constants
 
+const elementsToAnimate = document.getElementsByClassName("animate")
 
-//ADD STYLES
+// Add styles
+
 addStyles()
 
 function addStyles() {
-    let styles = `
+    const styles = `
     @keyframes floatUp {
         0% {
             opacity: 0;
@@ -85,73 +85,65 @@ function addStyles() {
     .floatRight {}
     `
 
-    var styleSheet = document.createElement("style")
+    const styleSheet = document.createElement("style")
     styleSheet.innerHTML = styles
     document.head.appendChild(styleSheet)
 }
 
-window.addEventListener("load", animateItem)
-
-window.addEventListener("scroll", animateItem)
+window.addEventListener('resize', animateEls)
+window.addEventListener("load", animateEls)
+window.addEventListener("scroll", animateEls)
 
 //ANIMATIONS
-function animateItem() {
 
-    for (let item of animateItems) {
+function animateEls() {
 
-        if (!item.dataset.showValue) {
+    for (const el of elementsToAnimate) {
 
-            item.dataset.showValue = "100"
-        }
+        if (!el.dataset.showValue) el.dataset.showValue = "100"
+        if (!el.dataset.time) el.dataset.time = "0.5"
 
-        if (!item.dataset.time) {
+        el.style.animationDuration = el.dataset.time + "s"
 
-            item.dataset.time = "0.5"
-        }
+        const userTop = window.innerHeight - el.dataset.showValue
 
-        item.style.animationDuration = item.dataset.time + "s"
+        const elTop = Math.trunc(el.getBoundingClientRect().top / 10) * 10
 
-        let userPosTop = browserHeight - item.dataset.showValue
+        if (userTop >= elTop) {
 
-        let itemPosTop = Math.trunc(getPosition(item) / 10) * 10
+            el.classList.add("animateShow")
 
-        function getPosition(item) {
+            if (el.classList.contains("floatUp")) {
 
-            let top = item.getBoundingClientRect().top
-
-            return top
-        }
-
-        scrollTop(userPosTop, itemPosTop)
-
-        function scrollTop(userPosTop, itemPosTop) {
-
-            if (userPosTop >= itemPosTop) {
-
-                item.classList.add("animateShow")
-
-                if (item.classList.contains("floatUp")) {
-
-                    item.style.animationName = "floatUp"
-                } else if (item.classList.contains("floatDown")) {
-
-                    item.style.animationName = "floatDown"
-                } else if (item.classList.contains("floatLeft")) {
-
-                    item.style.animationName = "floatLeft"
-                } else if (item.classList.contains("floatRight")) {
-
-                    item.style.animationName = "floatRight"
-                } else {
-
-                    item.style.animationName = "still"
-                }
-            } else if (browserHeight <= itemPosTop) {
-
-                item.classList.remove("animateShow")
-
-                item.style.animationName = "null"
+                el.style.animationName = "floatUp"
+                continue
             }
+            if (el.classList.contains("floatDown")) {
+
+                el.style.animationName = "floatDown"
+                continue
+            }
+            if (el.classList.contains("floatLeft")) {
+
+                el.style.animationName = "floatLeft"
+                continue
+            }
+            if (el.classList.contains("floatRight")) {
+
+                el.style.animationName = "floatRight"
+                continue
+            }
+
+            el.style.animationName = "still"
+            continue
+        }
+
+        if (window.innerHeight <= elTop) {
+
+            el.classList.remove("animateShow")
+
+            el.style.animationName = "undefined"
+            continue
         }
     }
 }
